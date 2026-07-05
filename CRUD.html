@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CRUD.css">
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Student Records</h1>
+  <span class="badge">CRUD</span>
+</header>
+
+<div class="layout">
+
+  <!-- Form -->
+  <aside>
+    <div class="form-card">
+      <div class="form-card-header">
+        <h2 id="form-heading">New entry</h2>
+        <span class="mode-pill" id="mode-pill">INSERT</span>
+      </div>
+      <div class="form-body">
+        <form id="form" novalidate>
+          <div class="field">
+            <label for="i1">Student name</label>
+            <input type="text" id="i1" placeholder="e.g. Arka Das" required>
+          </div>
+          <div class="field">
+            <label for="i2">Age</label>
+            <input type="number" id="i2" placeholder="e.g. 20" min="5" max="99" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="i3">Subject 1</label>
+              <input type="number" id="i3" placeholder="0–100" min="0" max="100" required>
+            </div>
+            <div class="field">
+              <label for="i4">Subject 2</label>
+              <input type="number" id="i4" placeholder="0–100" min="0" max="100" required>
+            </div>
+          </div>
+          <p class="marks-hint">Marks are out of 100 per subject</p>
+          <button type="submit" class="btn-submit" id="btn">Add student</button>
+          <button type="button" class="btn-cancel" id="btn-cancel">Cancel edit</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Table -->
+  <section>
+    <div class="table-card">
+      <div class="table-card-header">
+        <h2>All students</h2>
+        <span class="record-count" id="record-count">2 records</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sub 1</th>
+            <th>Sub 2</th>
+            <th>Total</th>
+            <th>%</th>
+            <th>Edit</th>
+            <th>Del</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="empty" class="empty-state" style="display:none">No students yet — add one using the form.</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+</body>
+</html>
+<script src="CRUD.js"></script> 
